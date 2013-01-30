@@ -6,14 +6,14 @@
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 FB.init({
-        appId  : '<SEU APPID>',
+        appId  : '466994206697522',
         status: true, cookie: false, xfbml: false, oauth: true
 });
 
 function statusFacebook() {
         FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-                window.location.replace("URL_TO_REDIRECT");
+                window.location.replace("http://brumouta.github.com/MAOE/");
         } else if (response.status === 'not_authorized') {
                 loginFacebook(); // nao autorizado, solicitar login
         } else {
@@ -24,7 +24,7 @@ function statusFacebook() {
 function loginFacebook() {
         FB.login(function(response) {
                 if (response.authResponse) {
-                        window.location.replace("URL_TO_REDIRECT");
+                        window.location.replace("http://brumouta.github.com/MAOE/");
                 }
         }, {scope: 'email,publish_stream,user_photos,friends_about_me' });
 }
