@@ -29,11 +29,18 @@ function loginFacebook() {
         }, {scope: 'email,publish_stream,user_photos,friends_about_me' });
 }
 
+function logout() {
+    FB.logout(function(response) {
+        console.log('User is now logged out');
+    });
+}
+
 </script>
 
 
 <body>
-	<a href="#" onClick="statusFacebook();">Continuar na APP</a>
+	<a href="#" onClick="statusFacebook();">Entrar pelo Facebook</a>
+	<a href="#" onClick="logout();">Sair</a>
 </body>
 
 </html>
