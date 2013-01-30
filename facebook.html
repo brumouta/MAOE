@@ -13,7 +13,7 @@ FB.init({
 function statusFacebook() {
         FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-                window.location.replace("http://brumouta.github.com/MAOE/");
+                window.location.replace("http://brumouta.github.com/MAOE/facebook.html");
         } else if (response.status === 'not_authorized') {
                 loginFacebook(); // nao autorizado, solicitar login
         } else {
@@ -24,7 +24,7 @@ function statusFacebook() {
 function loginFacebook() {
         FB.login(function(response) {
                 if (response.authResponse) {
-                        window.location.replace("http://brumouta.github.com/MAOE/");
+                        window.location.replace("http://brumouta.github.com/MAOE/facebook.html");
                 }
         }, {scope: 'email,publish_stream,user_photos,friends_about_me' });
 }
@@ -41,6 +41,11 @@ function logout() {
 <body>
 	<a href="#" onClick="statusFacebook();">Entrar pelo Facebook</a>
 	<a href="#" onClick="logout();">Sair</a>
+	<script type="text/javascript">
+	FB.api('/me', function(response) {
+  alert('Your name is ' + response.name);
+});
+	</script>
 </body>
 
 </html>
