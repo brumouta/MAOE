@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "name": "MAOE",
+  "description": "Surpresa",
+  "icons": {
+    "16": "/img/",
+    "48": "/img/",
+    "128": "/img/"
+  },
+  "developer": {
+    "name": "Bruno, Renato, Ricardo",
+  },
+  "installs_allowed_from": ["*"],
+  "appcache_path": "/cache.manifest",
+  "default_locale": "pt-BR"
+}
