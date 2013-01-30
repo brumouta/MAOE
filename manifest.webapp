@@ -2,11 +2,6 @@
   "version": "0.1",
   "name": "MAOE",
   "description": "Surpresa",
-  /*"launch_path":
-    (opcional) O caminho a partir da origem do aplicativo que é carregado quando 
-    o aplicativo é executado. Caso não seja incluído, a origem do aplicativo é tratada
-     como o URL de execução. Veja Tratamento dos caminhos.
-    */
   "icons": {
     "16": "/img/",
     "48": "/img/",
