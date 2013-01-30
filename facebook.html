@@ -3,36 +3,37 @@
 <head>
 <title>Facebook Connect</title>
 
-
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
-  // Additional JS functions here
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '466994206697522', // App ID
-      channelUrl : '056108cb5473c2765b1bb2666d637c03', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
+FB.init({
+        appId  : '<SEU APPID>',
+        status: true, cookie: false, xfbml: false, oauth: true
+});
 
-    // Additional init code here
+function statusFacebook() {
+        FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+                window.location.replace("URL_TO_REDIRECT");
+        } else if (response.status === 'not_authorized') {
+                loginFacebook(); // nao autorizado, solicitar login
+        } else {
+                loginFacebook(); // nao autorizado, solicitar login
+        }})
+}
 
-  };
+function loginFacebook() {
+        FB.login(function(response) {
+                if (response.authResponse) {
+                        window.location.replace("URL_TO_REDIRECT");
+                }
+        }, {scope: 'email,publish_stream,user_photos,friends_about_me' });
+}
 
-  // Load the SDK Asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
 </script>
- <script src="//connect.facebook.net/en_US/all.js"></script>
-</head>
+
 
 <body>
-<div id="fb-root"></div>
+	<a href="#" onClick="statusFacebook();">Continuar na APP</a>
 </body>
 
 </html>
