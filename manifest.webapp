@@ -1,15 +1,15 @@
 {
-  "version": "0.1",
-  "name": "MAOE",
-  "description": "Surpresa",
-  "launch_path": "/MAOE/index.html",
-  "icons": {
-    "16": "/img/",
-    "48": "/img/",
-    "128": "/img/"
-  },
-  "developer": {
-    "name": "Bruno, Renato, Ricardo",
-  },
-  "installs_allowed_from": ["*"]
+"version": "0.1",
+"name": "MAOE",
+"description": "Surpresa",
+"launch_path": "/MAOE/index.html",
+"icons": {
+  "16": "/img/",
+  "48": "/img/",
+  "128": "/img/"
+},
+"developer": {
+  "name": "Bruno, Renato, Ricardo"
+},
+"installs_allowed_from": ["*"]
 }
