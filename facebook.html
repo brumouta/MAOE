@@ -45,15 +45,13 @@ function logout() {
 	FB.ui(
   {
    method: 'feed',
-   name: 'The Facebook SDK for Javascript',
-   caption: 'Bringing Facebook to the desktop and mobile web',
+   name: 'Minha Localizacao',
+   caption: 'Campuseiro tera sua localizacao postada pelo facebook',
    description: (
-      'A small JavaScript library that allows you to harness ' +
-      'the power of Facebook, bringing the user\'s identity, ' +
-      'social graph and distribution power to your site.'
-   ),
-   link: 'https://developers.facebook.com/docs/reference/javascript/',
-   picture: 'http://www.fbrell.com/public/f8.jpg'
+      'Ola, essa é minha posicao na Campus Party ' +
+      'postada no Facebook' +
+      'Teste'
+   )
   },
   function(response) {
     if (response && response.post_id) {
