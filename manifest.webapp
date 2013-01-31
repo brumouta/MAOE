@@ -6,7 +6,7 @@
 "icons": {
   "16": "/img/",
   "48": "/img/",
-  "128": "/img/"
+  "128": "/img/flag128.png"
 },
 "developer": {
   "name": "Bruno, Renato, Ricardo"
