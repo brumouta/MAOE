@@ -3,6 +3,11 @@
 <head>
 <title>Facebook Connect</title>
 
+
+
+<body>
+  <a href="#" onClick="statusFacebook();">Entrar pelo Facebook</a>
+  <a href="#" onClick="logout();">Sair</a>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 FB.init({
@@ -26,7 +31,7 @@ function loginFacebook() {
                 if (response.authResponse) {
                         window.location.replace("http://brumouta.github.com/MAOE/facebook.html");
                 }
-        }, {scope: 'email,publish_stream,user_photos,friends_about_me' });
+        }, {scope: 'email,publish_stream,friends_about_me' });
 }
 
 function logout() {
@@ -36,11 +41,6 @@ function logout() {
 }
 
 </script>
-
-
-<body>
-	<a href="#" onClick="statusFacebook();">Entrar pelo Facebook</a>
-	<a href="#" onClick="logout();">Sair</a>
 	<script type="text/javascript">
 	FB.ui(
   {
