@@ -4,9 +4,9 @@
   "description": "Surpresa",
   "launch_path": "/MAOE/index.html",
   "icons": {
-  "16": "/images/",
-  "48": "/images/",
-  "128": "/images/flag128.png"
+  "16": "MAOE/images/",
+  "48": "MAOE/images/",
+  "128": "MAOE/images/flag128.png"
   },
   "developer": {
   "name": "Bruno, Renato, Ricardo"
