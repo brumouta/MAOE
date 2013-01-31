@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Maoe</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, min-zoom=1, max-zoom=1, user-scalable=no">
 </head>
 
 <body>
@@ -13,6 +14,7 @@
 </header>
 <h1>Olá!</h1>
 <p>Bem vindo ao "Mas Onde Estou?" um app que ajuda a encontrar seus amigos na campus-party.</p>
+<p>Logue com o facebook para começar a cadastrar seus locais no app e poder compartilhar com os amigos</p>
 
 <a id="login-face"><button>Logar com o facebook</button></a>
 
@@ -32,7 +34,7 @@ FB.init({
 function statusFacebook() {
         FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-                window.location.href = "http://brumouta.github.com/MAOE/index.html";
+                window.location.href = "http://brumouta.github.com/MAOE/2.html";
         } else if (response.status === 'not_authorized') {
                 loginFacebook(); // nao autorizado, solicitar login
         } else {
@@ -43,7 +45,7 @@ function statusFacebook() {
 function loginFacebook() {
         FB.login(function(response) {
                 if (response.authResponse) {
-                        window.location.href = "http://brumouta.github.com/MAOE/index.html";
+                        window.location.href = "http://brumouta.github.com/MAOE/2.html";
                 }
         }, {scope: 'email,publish_stream,friends_about_me' });
 }
