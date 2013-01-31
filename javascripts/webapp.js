@@ -33,6 +33,11 @@ else {
     console.log("Open Web Apps not supported");
 }
 
+document.querySelector("#gps").onclick = function() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+  document.body.innerHtml+=(position.coords.latitude + position.coords.longitude);
+});
+}
 
 var pickImage = document.querySelector("#pick-image");
 if (pickImage) { 
