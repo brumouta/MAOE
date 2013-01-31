@@ -6,18 +6,73 @@
 </head>
 
 <body>
-
 <header>
     <div id="install">
         <button>Install</button>
     </div>
 </header>
-    
-    <div id="gps">
-        <button>gps</button>
-    </div>
-    <a class="login-face">Logar com o facebook</a>
-    
-    <script type="text/javascript" src="javascripts/webapp.js"></script>
+<h1>Olá!</h1>
+<p>Bem vindo ao "Mas Onde Estou?" um app que ajuda a encontrar seus amigos na campus-party.</p>
+<a class="login-face">Logar com o facebook</a>
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript" src="javascripts/webapp.js"></script>
+<script>
+FB.init({
+        appId  : '466994206697522',
+        status: true, cookie: false, xfbml: false, oauth: true
+});
+
+function statusFacebook() {
+        FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+                window.location.href = "http://brumouta.github.com/MAOE/facebook.html";
+        } else if (response.status === 'not_authorized') {
+                loginFacebook(); // nao autorizado, solicitar login
+        } else {
+                loginFacebook(); // nao autorizado, solicitar login
+        }})
+}
+
+function loginFacebook() {
+        FB.login(function(response) {
+                if (response.authResponse) {
+                        window.location.href = "http://brumouta.github.com/MAOE/facebook.html";
+                }
+        }, {scope: 'email,publish_stream,friends_about_me' });
+}
+
+function logout() {
+    FB.logout(function(response) {
+        console.log('User is now logged out');
+    });
+}
+
+</script>
+    <script type="text/javascript">
+    FB.ui(
+  {
+   method: 'feed',
+   name: 'Minha Localizacao',
+   caption: 'Campuseiro tera sua localizacao postada pelo facebook',
+   description: (
+      'Ola, essa é minha posicao na Campus Party ' +
+      'postada no Facebook' +
+      'Teste'
+   )
+  },
+  function(response) {
+    if (response && response.post_id) {
+      alert('Post was published.');
+    } else {
+      alert('Post was not published.');
+    }
+  }
+);
+
+document.querySelector('#login-face').onclick = function () {statusFacebook();}
+
+</script>
+
 </body>
 </html>
