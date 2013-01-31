@@ -4,8 +4,6 @@ if (navigator.mozApps) {
     checkIfInstalled.onsuccess = function () {
         if (checkIfInstalled.result) {
             // Already installed
-            install.onclick = function () {
-                var installApp = navigator.mozApps.mgmt.uninstall(manifestURL);
         }
         else {
             var install = document.querySelector("#install"),
