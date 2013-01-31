@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Maoe</title>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, min-zoom=1, max-zoom=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="shared/style/confirm.css">
 </head>
 
 <body>
@@ -39,15 +40,15 @@ function statusFacebook() {
                 loginFacebook(); // nao autorizado, solicitar login
         } else {
                 loginFacebook(); // nao autorizado, solicitar login
-        }})
+        }});
 }
 
 function loginFacebook() {
-        FB.login(function(response) {
-                if (response.authResponse) {
-                        window.location.href = "http://brumouta.github.com/MAOE/2.html";
-                }
-        }, {scope: 'email,publish_stream,friends_about_me' });
+    FB.login(function(response) {
+            if (response.authResponse) {
+                    window.location.href = "http://brumouta.github.com/MAOE/2.html";
+            }
+    }, {scope: 'email,publish_stream,friends_about_me' });
 }
 
 function logout() {
