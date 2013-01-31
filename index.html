@@ -33,7 +33,7 @@ FB.init({
 function statusFacebook() {
         FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-                window.location.href = "http://brumouta.github.com/MAOE/index.html";
+                window.location.href = "http://brumouta.github.com/MAOE/2.html";
         } else if (response.status === 'not_authorized') {
                 loginFacebook(); // nao autorizado, solicitar login
         } else {
@@ -44,7 +44,7 @@ function statusFacebook() {
 function loginFacebook() {
         FB.login(function(response) {
                 if (response.authResponse) {
-                        window.location.href = "http://brumouta.github.com/MAOE/index.html";
+                        window.location.href = "http://brumouta.github.com/MAOE/2.html";
                 }
         }, {scope: 'email,publish_stream,friends_about_me' });
 }
