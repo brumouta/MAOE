@@ -36,7 +36,7 @@ else {
 document.querySelector("#gps").onclick = function() {
     navigator.geolocation.getCurrentPosition(function(position) {
   //alert(position.coords.latitude + position.coords.longitude);
-  alert('123');
+  window.print('123')
 });
 }
 
