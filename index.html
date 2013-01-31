@@ -1,22 +1,68 @@
+<!DOCTYPE HTML>
 <html>
-
 <head>
-<meta charset="utf-8">
-<title>Maoe</title>
-</head>
+<title>Facebook Connect</title>
+
+
 
 <body>
-<div id="main">
+  <a href="#" onClick="statusFacebook();">Entrar pelo Facebook</a>
+    <a href="#" onClick="logout();">Sair</a>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+alert('teste');
+FB.init({
+        appId  : '466994206697522',
+        status: true, cookie: false, xfbml: false, oauth: true
+});
 
-  <h2>Teste de botão</h2>
+function statusFacebook() {
+        FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+                window.location.href = "http://brumouta.github.com/MAOE/facebook.html";
+        } else if (response.status === 'not_authorized') {
+                loginFacebook(); // nao autorizado, solicitar login
+        } else {
+                loginFacebook(); // nao autorizado, solicitar login
+        }})
+}
 
-  <button id="pick-image">Selecionar imagem</button>
-  <div id="image-presenter"></div>
-  <a href="facebook.html">login</a>
-</div>
+function loginFacebook() {
+        FB.login(function(response) {
+                if (response.authResponse) {
+                        window.location.href = "http://brumouta.github.com/MAOE/facebook.html";
+                }
+        }, {scope: 'email,publish_stream,friends_about_me' });
+}
 
-<script type="text/javascript" src="javascripts/webapp.js"></script>
+function logout() {
+    FB.logout(function(response) {
+        console.log('User is now logged out');
+    });
+}
 
+</script>
+    <script type="text/javascript">
+    FB.ui(
+  {
+   method: 'feed',
+   name: 'Minha Localizacao',
+   caption: 'Campuseiro tera sua localizacao postada pelo facebook',
+   description: (
+      'Ola, essa é minha posicao na Campus Party ' +
+      'postada no Facebook' +
+      'Teste'
+   )
+  },
+  function(response) {
+    if (response && response.post_id) {
+      alert('Post was published.');
+    } else {
+      alert('Post was not published.');
+    }
+  }
+);
+    </script>
 </body>
-    
+
 </html>
