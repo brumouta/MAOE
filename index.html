@@ -54,29 +54,8 @@ function logout() {
     });
 }
 
-</script>
-    <script type="text/javascript">
-    FB.ui(
-  {
-   method: 'feed',
-   name: 'Minha Localizacao',
-   caption: 'Campuseiro tera sua localizacao postada pelo facebook',
-   description: (
-      'Ola, essa é minha posicao na Campus Party ' +
-      'postada no Facebook' +
-      'Teste'
-   )
-  },
-  function(response) {
-    if (response && response.post_id) {
-      alert('Post was published.');
-    } else {
-      alert('Post was not published.');
-    }
-  }
-);
 
-document.querySelector('#login-face').onclick = function () {statusFacebook();}
+document.querySelector('#login-face').onclick = function () {loginFacebook();}
 
 </script>
 
