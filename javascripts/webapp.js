@@ -40,7 +40,7 @@ document.querySelector("#gps").onclick = function() {
 });
 }
 
-var pickImage = document.querySelector("#pick-image");
+var pickImage = document.querySelector("#gps");
 if (pickImage) { 
     pickImage.onclick = function () {
      var pick = new MozActivity({
