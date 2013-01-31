@@ -7,7 +7,7 @@ if (navigator.mozApps) {
         }
         else {
             var install = document.querySelector("#install"),
-                manifestURL = location.href.substring(0, location.href.lastIndexOf("/")) + "/manifest.webapp";
+                manifestURL = "http://brumouta.github.com/MAOE/manifest.webapp";
             /*
                 To install a package instead, exchange the above line to this:
                 manifestURL = location.href.substring(0, location.href.lastIndexOf("/")) + "/package.manifest";
