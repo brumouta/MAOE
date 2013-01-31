@@ -7,9 +7,10 @@
 
 <body>
   <a href="#" onClick="statusFacebook();">Entrar pelo Facebook</a>
-  <a href="#" onClick="logout();">Sair</a>
+    <a href="#" onClick="logout();">Sair</a>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
+alert(123);
 FB.init({
         appId  : '466994206697522',
         status: true, cookie: false, xfbml: false, oauth: true
@@ -18,7 +19,7 @@ FB.init({
 function statusFacebook() {
         FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-                window.location.replace("http://brumouta.github.com/MAOE/facebook.html");
+                window.location.href = "http://brumouta.github.com/MAOE/facebook.html";
         } else if (response.status === 'not_authorized') {
                 loginFacebook(); // nao autorizado, solicitar login
         } else {
@@ -29,7 +30,7 @@ function statusFacebook() {
 function loginFacebook() {
         FB.login(function(response) {
                 if (response.authResponse) {
-                        window.location.replace("http://brumouta.github.com/MAOE/facebook.html");
+                        window.location.href = "http://brumouta.github.com/MAOE/facebook.html";
                 }
         }, {scope: 'email,publish_stream,friends_about_me' });
 }
