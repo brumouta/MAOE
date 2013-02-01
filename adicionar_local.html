@@ -27,31 +27,27 @@
     </header>
 </section>
 
-<div id="passo-1">
-    <p>Escolha o local que deseja registrar</p>
-    <label>
-        <input name="example" checked="" type="radio" value="1">
-        <span>Barraca</span>
-    </label>
-    <label>
-        <input name="example" checked="" type="radio" value="1">
-        <span>Arena</span>
-    </label>
-</div>
+<div style="padding:0 15px;">
+    <div id="passo-1">
+        <p>Escolha o local que deseja registrar</p>
+        <button name="example" value="1" class="button_tp_loc">Barraca</button>
+        <button name="example" value="2" class="button_tp_loc">Arena</button>
+    </div>
 
-<div id="passo-2" style="display:none;">
-	<h1>Segundo Passo</h1>
+    <div id="passo-2" style="display:none;">
+    	<h1>Segundo Passo</h1>
 
-	<p>Agora caminhe até <span id="tipo_local"></span>, assim você pode tirar uma foto dela e saberemos melhor onde ela fica.</p>
-	<button id="cheguei">Já estou no lugar certo</button>
-</div>
+    	<p>Agora caminhe até <span id="tipo_local"></span>, assim você pode tirar uma foto dela e saberemos melhor onde ela fica.</p>
+    	<button id="cheguei">Já estou no lugar certo</button>
+    </div>
 
-<div id="passo-3" style="display:none;">
-	<h1>Terceiro Passo</h1>
+    <div id="passo-3" style="display:none;">
+    	<h1>Terceiro Passo</h1>
 
-	<p>Agora é enviar a foto</p>
-	<div id="image-presenter" style="max-width:460px;">Toque aqui para escolher uma foto</div>
-	<button id="enviar">Enviar</button>
+    	<p>Agora é enviar a foto</p>
+    	<div id="image-presenter" style="max-width:460px;">Toque aqui para escolher uma foto</div>
+    	<button id="enviar">Enviar</button>
+    </div>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -87,6 +83,8 @@ function step1(evt) {
 	data.tipo_local = evt.target.options[evt.target.selectedIndex].value;
 	document.querySelector('#passo-1').style.display = "none";
 	document.querySelector('#passo-2').style.display = "block";
+    $('h2').hide();
+    $('h2.p2').show();
 }
 
 function step2(evt) {
@@ -117,7 +115,7 @@ function step3 (evt) {
     };
 }
 
-document.querySelector("#local").addEventListener('change',step1);
+//document.querySelector("#local").addEventListener('change',step1);
 document.querySelector("#cheguei").addEventListener('click',step2);
 document.querySelector("#image-presenter").addEventListener('click',step3);
 </script>
