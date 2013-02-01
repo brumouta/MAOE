@@ -53,7 +53,7 @@ function statusFacebook() {
 function loginFacebook() {
     FB.login(function(response) {
             if (response.authResponse) {
-                    window.location.href = "http://brumouta.github.com/MAOE/2.html";
+                    window.location.href = "http://brumouta.github.com/MAOE/meus_locais.html";
             }
     }, {scope: 'email,publish_stream,friends_about_me' });
 }
