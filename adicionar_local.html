@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Adicionar Local</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, min-zoom=1, max-zoom=1, user-scalable=no">
 </head>
 <body>
 
@@ -59,17 +60,15 @@ function pickImage () {
 
 function step1(evt) {
 	data.tipo_local = evt.target.options[evt.target.selectedIndex].value;
-	$('#passo-1').hide();
-	$('#passo-2').show();
-}
+	document.querySelector('#passo-1').style.diisplay = "none";
+	document.querySelector('#passo-2').style.diisplay = "block";
 
 function step2(evt) {
 	navigator.geolocation.getCurrentPosition(function(position) {
-		alert(position);
 		data.lat = position.coords.latitude;
 		data.lng = position.coords.longitude;
 		document.querySelector('#passo-2').style.diisplay = "none";
-		$('#passo-3').show();
+		document.querySelector('#passo-3').style.diisplay = "block";
 	});
 }
 
