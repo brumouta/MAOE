@@ -65,9 +65,9 @@ function step1(evt) {
 
 function step2(evt) {
 	navigator.geolocation.getCurrentPosition(function(position) {
-		data.lat = position.coords.latitude.toString();
-		data.lng = position.coords.longitude.toString();
-		$('#passo-2').hide();
+		data.lat = position.coords.latitude;
+		data.lng = position.coords.longitude;
+		document.querySelector('#passo-2').style.diisplay = "none";
 		$('#passo-3').show();
 	});
 }
