@@ -1,31 +1,38 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Maoe</title>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, min-zoom=1, max-zoom=1, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="css/gaia/buttons.css">
-<style>
-
-header.show-install #install {
-    display: inline-block;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Adicionar Local</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, min-zoom=1, max-zoom=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/gaia/headers.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/gaia/buttons.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/gaia/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css/gaia/input_areas.css">
+    <link rel="stylesheet" type="text/css" href="css/gaia/action_menu.css">
+    <link rel="stylesheet" type="text/css" href="css/gaia/switches.css">
 </head>
-
 <body>
-<header>
-    <div id="install" style="display:none">
-        <button>Install</button>
-    </div>
-</header>
 
-<h1>Olá!</h1>
+<form action="http://fadasdobem.com.br/ricardo/add.php" method="post" onsubmit="return false;">
+<section role="region">
+    <header>
+        <button><span class="icon icon-back">back</span></button>
+        <h1>Maoe</h1>
+    </header>
+
+    <header>
+    <h2>Olá!</h2>
+    </header>
+</section>
+
+<div style="padding:0 15px;">
 <p>Bem vindo ao "Mas Onde Estou?" um app que ajuda a encontrar seus amigos na campus-party.</p>
 <p>Logue com o facebook para começar a cadastrar seus locais no app e poder compartilhar com os amigos</p>
 
 <a id="login-face"><button class="recommend">Login com Facebook</button></a>
-    
+</div>
+
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script type="text/javascript" src="javascripts/webapp.js"></script>
 <script src="javascripts/install.js"></script>

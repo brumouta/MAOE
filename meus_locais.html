@@ -1,45 +1,48 @@
 <!doctype html>
-<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Adicionar Local</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, min-zoom=1, max-zoom=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/gaia/headers.css">
     <!-- <link rel="stylesheet" type="text/css" href="css/gaia/buttons.css"> -->
     <link rel="stylesheet" type="text/css" href="css/gaia/buttons.css">
     <link rel="stylesheet" type="text/css" href="css/gaia/input_areas.css">
+    <link rel="stylesheet" type="text/css" href="css/gaia/action_menu.css">
+    <link rel="stylesheet" type="text/css" href="css/gaia/switches.css">
 </head>
 <body>
 
+<form action="http://fadasdobem.com.br/ricardo/add.php" method="post" onsubmit="return false;">
 <section role="region">
     <header>
-        <!-- <button><span class="icon icon-close">close</span></button> -->
-    <menu type="toolbar">
-    </menu>
-    <h1>Maoe</h1>
+        <button><span class="icon icon-back">back</span></button>
+        <h1>Maoe</h1>
     </header>
 
     <header>
-        <h2>Meus locais</h2>
+    <h2>Bem vindo!</h2>
     </header>
 </section>
 
-<div id="lista-locais">
-    <div class="local">
-        <h2>Minha Barraca</h2>
-        <img src="" alt="Minha Barraca">
-        <p class="info">&nbsp;</p>
-        <button>Editar</button>
+<div style="padding:0 15px;">
+    <div id="lista-locais">
+        <div class="local">
+            <h2>Minha Barraca</h2>
+            <img src="" alt="Minha Barraca">
+            <p class="info">&nbsp;</p>
+            <button>Editar</button>
+        </div>
     </div>
-</div>
 
-<div class="novo-aqui">
-    <p>Olá! Notamos que você ainda não tem nenhum local cadastrado.</p>
+    <div class="novo-aqui">
+        <p>Notamos que você ainda não tem nenhum local cadastrado.</p>
+    </div>
+
     <a href="adicionar_local.html"><button>Adicionar Local</button></a>
     <a href="meus_amigos.html"><button>Locais dos meus amigos</button></a>
 </div>
-<body>
 
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -53,7 +56,7 @@ function logout() {
 }
 
 FB.init({
-        appId  : '594023257280586',
+        appId: '594023257280586',
         status: true, cookie: false, xfbml: false, oauth: true
 });
 

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form action="http://fadasdobem.com.br/ricardo/add.php" method="post"></form>
+<form action="http://fadasdobem.com.br/ricardo/add.php" method="post" onsubmit="return false;">
 <section role="region">
     <header>
         <button><span class="icon icon-back">back</span></button>
@@ -34,7 +34,7 @@
         <label>
             <input name="tipo_local_id" checked="checked" type="radio">
             <span>Barraca</span>
-        </label>
+        </label><br />
         <label>
             <input name="tipo_local_id" checked="" type="radio">
             <span>Arena</span>
@@ -45,7 +45,7 @@
     <div id="passo-2" style="display:none;">
 
     	<p>Agora caminhe até a sua <span id="tipo_local"></span>, assim você pode tirar uma foto dela e saberemos melhor onde ela fica.</p>
-    	<button id="cheguei">Já estou no lugar certo</button>
+    	<button id="step2">Já estou no lugar certo</button>
         <input type="hidden" name="lat">
         <input type="hidden" name="lng">
         <input type="hidden" name="fb_id">
@@ -55,9 +55,10 @@
 
     	<p>Agora é enviar a foto</p>
         <input type="file" name="imagem">
+        <button id="step3">Enviar</button>
     </div>
 </div>
-
+</form>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script>
 document.querySelector('.icon-back').onclick = function () { window.history.back() }
@@ -127,8 +128,8 @@ function step3 (evt) {
 }
 
 document.querySelector("#step1").addEventListener('click',step1);
-document.querySelector("#cheguei").addEventListener('click',step2);
-document.querySelector("#image-presenter").addEventListener('click',step3);
+document.querySelector("#step2").addEventListener('click',step2);
+document.querySelector("#step3").addEventListener('click',step3);
 </script>
 </body>
 </html>
