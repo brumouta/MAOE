@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Adicionar Local</title>
+</head>
+<body>
+
+<div id="passo-1">
+	<h1>Primeiro passo</h1>
+
+	<p>Escolha seu tipo de local</p>
+	<select name="local" id="local">
+		<option value="1">Barraca</option>
+		<option value="2">Arena</option>
+	</select>
+</div>
+
+<div id="passo-2" style="display:none;">
+	<h1>Segundo Passo</h1>
+
+	<p>Agora caminhe até <span id="tipo_local"></span>, assim você pode tirar uma foto dela e saberemos melhor onde ela fica.</p>
+	<button id="cheguei">Já estou no lugar certo</button>
+</div>
+
+<div id="passo-3" style="display:none;">
+	<h1>Terceiro Passo</h1>
+
+	<p>Agora é só escolhe uma foto e enviar.</p>
+	<div id="image-presenter" style="max-width:460px;">Escolha a imagem</div>
+</div>
+<script>
+function pickImage () {
+	var pickImage = document.querySelector("#pick-image");
+    if (pickImage) { 
+        pickImage.onclick = function () {
+             var pick = new MozActivity({
+                 name: "pick",
+                 data: {
+                     type: ["image/png", "image/jpg", "image/jpeg"]
+				}
+             });
+
+            pick.onsuccess = function () {
+
+                var img = document.createElement("img");
+                img.src = window.URL.createObjectURL(this.result.blob);
+                var imagePresenter = document.querySelector("#image-presenter");
+                imagePresenter.appendChild(img);
+                imagePresenter.style.display = "block";
+            };
+
+            pick.onerror = function () {
+
+                //alert("Can't view the image!");
+            };
+        }
+    }
+}
+</script>
+</body>
+</html>
