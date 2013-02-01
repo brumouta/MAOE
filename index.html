@@ -42,7 +42,7 @@ FB.init({
 function statusFacebook() {
         FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-                window.location.href = "http://brumouta.github.com/MAOE/2.html";
+                window.location.href = "http://brumouta.github.com/MAOE/meus_locais.html";
         } else if (response.status === 'not_authorized') {
                 loginFacebook(); // nao autorizado, solicitar login
         } else {
