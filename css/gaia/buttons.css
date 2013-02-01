@@ -44,7 +44,7 @@ a.recommend[role="button"]:active  {
 /* Recommend */
 button.recommend,
 a[role="button"].recommend {
-  /*background-image: url(buttons/images/ui/recommend.png);*/
+  background-image: none;
   background-color: #3B5998;
   border-color: #00acce;
 }
