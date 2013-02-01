@@ -8,6 +8,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/gaia/buttons.css"> -->
     <link rel="stylesheet" type="text/css" href="css/gaia/buttons.css">
     <link rel="stylesheet" type="text/css" href="css/gaia/input_areas.css">
+    <link rel="stylesheet" type="text/css" href="css/gaia/action_menu.css">
+    <link rel="stylesheet" type="text/css" href="css/gaia/switches.css">
 </head>
 <body>
 
@@ -27,11 +29,15 @@
 </section>
 
 <div id="passo-1">
-	<p>Escolha seu tipo de local</p>
-	<select name="local" id="local">
-		<option value="1">Barraca</option>
-		<option value="2">Arena</option>
-	</select>
+    <p>Escolha o local que deseja registrar</p>
+    <label>
+        <input name="example" checked="" type="radio" value="1">
+        <span>Barraca</span>
+    </label>
+    <label>
+        <input name="example" checked="" type="radio" value="1">
+        <span>Arena</span>
+    </label>
 </div>
 
 <div id="passo-2" style="display:none;">
