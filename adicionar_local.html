@@ -14,6 +14,7 @@
 </head>
 <body>
 
+<form action="http://fadasdobem.com.br/ricardo/add.php" method="post"></form>
 <section role="region">
     <header>
         <button><span class="icon icon-back">back</span></button>
@@ -31,29 +32,29 @@
     <div id="passo-1">
         <p>Escolha o local que deseja registrar</p>
         <label>
-            <input name="example" checked="" type="radio">
+            <input name="tipo_local_id" checked="checked" type="radio">
             <span>Barraca</span>
         </label>
         <label>
-            <input name="example" checked="" type="radio">
+            <input name="tipo_local_id" checked="" type="radio">
             <span>Arena</span>
         </label>
         <button id="step1">Próximo passo...</button>
     </div>
 
     <div id="passo-2" style="display:none;">
-    	<h1>Segundo Passo</h1>
 
-    	<p>Agora caminhe até <span id="tipo_local"></span>, assim você pode tirar uma foto dela e saberemos melhor onde ela fica.</p>
+    	<p>Agora caminhe até a sua <span id="tipo_local"></span>, assim você pode tirar uma foto dela e saberemos melhor onde ela fica.</p>
     	<button id="cheguei">Já estou no lugar certo</button>
+        <input type="hidden" name="lat">
+        <input type="hidden" name="lng">
+        <input type="hidden" name="fb_id">
     </div>
 
     <div id="passo-3" style="display:none;">
-    	<h1>Terceiro Passo</h1>
 
     	<p>Agora é enviar a foto</p>
-    	<div id="image-presenter" style="max-width:460px;">Toque aqui para escolher uma foto</div>
-    	<button id="enviar">Enviar</button>
+        <input type="file" name="imagem">
     </div>
 </div>
 
@@ -87,19 +88,22 @@ function pickImage () {
 }
 
 function step1(evt) {
-	data.tipo_local = evt.target.options[evt.target.selectedIndex].value;
-	document.querySelector('#passo-1').style.display = "none";
-	document.querySelector('#passo-2').style.display = "block";
+	$('#passo-1').hide();
+	$('#passo-2').show();
     $('h2').hide();
     $('h2.p2').show();
+
+    if ($('input[type=radio]:checked').val() == 1) {
+        $('#tipo_local').HTML('mesa')
+    }
 }
 
 function step2(evt) {
 	navigator.geolocation.getCurrentPosition(function(position) {
-		data.lat = position.coords.latitude;
-		data.lng = position.coords.longitude;
-		document.querySelector('#passo-2').style.diisplay = "none";
-		document.querySelector('#passo-3').style.diisplay = "block";
+        $('input[name=lat]').val(position.coords.latitude);
+        $('input[name=lng]').val(position.coords.longitude);
+        $('#passo-2').hide();
+        $('#passo-3').show();
 	});
 }
 
