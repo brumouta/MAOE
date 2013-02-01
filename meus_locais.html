@@ -21,6 +21,7 @@
 </div>
 <body>
 
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script>
 function logout() {
@@ -38,7 +39,7 @@ var me = FB.api("/me");
 
 alert(me.name);
 
-$.ajax({url:"http://brunomouta.github.com/MAOE/get.php",dataType:'json',data:{fb_id:1},success:success});
+$.ajax({url:"http://fadasdobem.com.br/ricardo/get.php",dataType:'json',data:{fb_id:1},success:success});
 
 function success (data) {
     if (data.length == 0) {
