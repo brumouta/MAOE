@@ -29,6 +29,3 @@ if (navigator.mozApps) {
         }
     };
 }
-else {
-    console.log("Open Web Apps not supported");
-}
