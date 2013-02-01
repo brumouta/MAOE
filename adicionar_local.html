@@ -54,7 +54,7 @@ function pickImage () {
 }
 
 function step2(evt) {
-	alert(evt);
+	alert(evt.target.selectIndex);
 }
 
 document.querySelector("#passo-1").addEventListener('change',step2);
