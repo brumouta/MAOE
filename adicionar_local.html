@@ -30,8 +30,15 @@
 <div style="padding:0 15px;">
     <div id="passo-1">
         <p>Escolha o local que deseja registrar</p>
-        <button name="example" value="1" class="button_tp_loc">Barraca</button>
-        <button name="example" value="2" class="button_tp_loc">Arena</button>
+        <label>
+            <input name="example" checked="" type="radio">
+            <span>Barraca</span>
+        </label>
+        <label>
+            <input name="example" checked="" type="radio">
+            <span>Arena</span>
+        </label>
+        <button id="step1">Próximo passo...</button>
     </div>
 
     <div id="passo-2" style="display:none;">
@@ -115,7 +122,7 @@ function step3 (evt) {
     };
 }
 
-//document.querySelector("#local").addEventListener('change',step1);
+document.querySelector("#step1").addEventListener('click',step1);
 document.querySelector("#cheguei").addEventListener('click',step2);
 document.querySelector("#image-presenter").addEventListener('click',step3);
 </script>
