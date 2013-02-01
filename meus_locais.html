@@ -49,9 +49,8 @@ function statusFacebook() {
 statusFacebook();
 
 function connected() {
-    alert(123);
     FB.api("/me", function (response) {
-        console.log(response);
+        alert(response.name);
     });
 }
 
