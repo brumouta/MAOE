@@ -65,9 +65,9 @@ function step1(evt) {
 
 function step2(evt) {
 	navigator.geolocation.getCurrentPosition(function(position) {
-		alert(1);
 		data.lat = position.coords.latitude.toString();
 		data.lng = position.coords.longitude.toString();
+		alert(data.lat);
 		$('#passo-2').hide();
 		$('#passo-3').show();
 	});
