@@ -61,15 +61,12 @@ function step1(evt) {
 	data.tipo_local = evt.target.options[evt.target.selectedIndex].value;
 	$('#passo-1').hide();
 	$('#passo-2').show();
-	document.querySelector("#cheguei").addEventListener('click',step2);
 }
 
 function step2(evt) {
 	navigator.geolocation.getCurrentPosition(function(position) {
-	alert(1);
-		//data.lat = position.coords.latitude.toString();
-		//data.lng = position.coords.longitude.toString();
-		alert('position.coords.latitude');
+		data.lat = position.coords.latitude.toString();
+		data.lng = position.coords.longitude.toString();
 		$('#passo-2').hide();
 		$('#passo-3').show();
 	});
@@ -94,6 +91,7 @@ function step3 (evt) {
     };
 }
 
+document.querySelector("#cheguei").onclick = step2;
 document.querySelector("#local").addEventListener('change',step1);
 document.querySelector("#image-presenter").addEventListener('click',step3);
 </script>
