@@ -46,7 +46,6 @@ function statusFacebook() {
         }});
 }
 
-statusFacebook();
 
 function connected() {
     FB.api("/me", function (response) {
@@ -65,6 +64,12 @@ function success (data) {
         $('#novo-aqui').hide();
     }
 }
+
+statusFacebook();
+
+$('#lista-locais').hide();
+$('#novo-aqui').hide();
+
 </script>
 </body>
 </html>
