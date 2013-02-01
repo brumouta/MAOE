@@ -22,11 +22,11 @@
 <body>
 
 <script src="http://connect.facebook.net/en_US/all.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script>
 function logout() {
     FB.logout(function(response) {
-        console.log('User is now logged out');
+        //Logout
     });
 }
 
@@ -35,9 +35,9 @@ FB.init({
         status: true, cookie: false, xfbml: false, oauth: true
 });
 
-var me = FB.api("/me");
-
-alert(me.name);
+var me = FB.api("/me", function (response) {
+    alert(response.name);
+});
 
 $.ajax({url:"http://fadasdobem.com.br/ricardo/get.php",dataType:'json',data:{fb_id:1},success:success});
 
