@@ -50,11 +50,11 @@ statusFacebook();
 
 function connected() {
     FB.api("/me", function (response) {
-        alert(response.name);
+        $.ajax({url:"http://fadasdobem.com.br/ricardo/get.php",dataType:'json',data:{fb_id:response.id},success:success});
     });
 }
 
-$.ajax({url:"http://fadasdobem.com.br/ricardo/get.php",dataType:'json',data:{fb_id:1},success:success});
+
 
 function success (data) {
     if (data.length == 0) {
