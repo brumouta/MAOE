@@ -4,9 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Adicionar Local</title>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, min-zoom=1, max-zoom=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="shared/style/headers.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/gaia/buttons.css"> -->
+    <link rel="stylesheet" type="text/css" href="shared/style/buttons.css">
 </head>
 <body>
-
+<header>
+    
+</header>
 <div id="passo-1">
 	<h1>Primeiro passo</h1>
 
@@ -60,8 +65,9 @@ function pickImage () {
 
 function step1(evt) {
 	data.tipo_local = evt.target.options[evt.target.selectedIndex].value;
-	document.querySelector('#passo-1').style.diisplay = "none";
-	document.querySelector('#passo-2').style.diisplay = "block";
+	document.querySelector('#passo-1').style.display = "none";
+	document.querySelector('#passo-2').style.display = "block";
+}
 
 function step2(evt) {
 	navigator.geolocation.getCurrentPosition(function(position) {
@@ -91,8 +97,8 @@ function step3 (evt) {
     };
 }
 
-document.querySelector("#cheguei").onclick = step2;
 document.querySelector("#local").addEventListener('change',step1);
+document.querySelector("#cheguei").addEventListener('click',step2);
 document.querySelector("#image-presenter").addEventListener('click',step3);
 </script>
 </body>
