@@ -61,6 +61,7 @@ function step1(evt) {
 	data.tipo_local = evt.target.options[evt.target.selectedIndex].value;
 	$('#passo-1').hide();
 	$('#passo-2').show();
+	document.querySelector("#cheguei").addEventListener('click',step2);
 }
 
 function step2(evt) {
@@ -70,7 +71,6 @@ function step2(evt) {
 		alert('position.coords.latitude');
 		$('#passo-2').hide();
 		$('#passo-3').show();
-		document.querySelector("#cheguei").addEventListener('click',step2);
 	});
 }
 
