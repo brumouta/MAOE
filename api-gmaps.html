@@ -29,9 +29,10 @@ function initialize() {
   var oldmap = new google.maps.GroundOverlay("mapacpbr.png", bounds);
   oldmap.setMap(map);
 
-var infowindow = new google.maps.InfoWindow();
+var infowindow = new google.maps.InfoWindow() {
 
-var conteudo = '<h2 class="firstHeading"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-snc6/5820_115092956381_6258230_n.jpg" style="width:48px;"> <a target="_blank" href="http://www.facebook.com/brumouta">@Vorrac</h2></a>'+
+  function addMark () 
+  var conteudo = '<h2 class="firstHeading"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-snc6/5820_115092956381_6258230_n.jpg" style="width:48px;"> <a target="_blank" href="http://www.facebook.com/brumouta">@Vorrac</h2></a>'+
     '<div class="bodyContent">'+
     '<p>'+'</p>'+
     '</div>';
@@ -41,11 +42,14 @@ var conteudo = '<h2 class="firstHeading"><img src="https://fbcdn-sphotos-a-a.aka
       map: map,
       title:"@Vorrac"
     });
+  }
 
   google.maps.event.addListener(marca, 'click', function() {
       infowindow.setContent(conteudo);
       infowindow.open(map, marca);
     });
+
+
 
 }
 </script>
