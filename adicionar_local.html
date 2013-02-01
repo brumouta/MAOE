@@ -26,8 +26,9 @@
 <div id="passo-3" style="display:none;">
 	<h1>Terceiro Passo</h1>
 
-	<p>Agora é só escolhe uma foto e enviar.</p>
+	<p>Agora é enviar a foto</p>
 	<div id="image-presenter" style="max-width:460px;">Escolha a imagem</div>
+	<button id="enviar">Enviar</button>
 </div>
 <script>
 function pickImage () {
@@ -42,21 +43,21 @@ function pickImage () {
              });
 
             pick.onsuccess = function () {
-
                 var img = document.createElement("img");
                 img.src = window.URL.createObjectURL(this.result.blob);
                 var imagePresenter = document.querySelector("#image-presenter");
                 imagePresenter.appendChild(img);
                 imagePresenter.style.display = "block";
             };
-
-            pick.onerror = function () {
-
-                //alert("Can't view the image!");
-            };
         }
     }
 }
+
+function step2(evt) {
+	alert(evt);
+}
+
+document.querySelector("#passo-1").addEventListener('change',step2);
 </script>
 </body>
 </html>
