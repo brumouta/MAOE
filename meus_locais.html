@@ -35,8 +35,10 @@ FB.init({
         status: true, cookie: false, xfbml: false, oauth: true
 });
 
-var me = FB.api("/me", function (response) {
-    alert(response.name);
+console.log('response');
+
+FB.api("/me", function (response) {
+    console.log(response);
 });
 
 $.ajax({url:"http://fadasdobem.com.br/ricardo/get.php",dataType:'json',data:{fb_id:1},success:success});
