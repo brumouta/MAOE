@@ -70,6 +70,7 @@ function step2(evt) {
 		alert('position.coords.latitude');
 		$('#passo-2').hide();
 		$('#passo-3').show();
+		document.querySelector("#cheguei").addEventListener('click',step2);
 	});
 }
 
@@ -93,7 +94,6 @@ function step3 (evt) {
 }
 
 document.querySelector("#local").addEventListener('change',step1);
-document.querySelector("#cheguei").addEventListener('click',step2);
 document.querySelector("#image-presenter").addEventListener('click',step3);
 </script>
 </body>
