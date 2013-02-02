@@ -104,12 +104,12 @@ function step2(evt) {
         $('input[name=lat]').val(position.coords.latitude);
         $('input[name=lng]').val(position.coords.longitude);
         $('#passo-2').hide();
-        $('#passo-3').show();
-	});
+        alert($('form').serialize());
+        //$('#passo-3').show();
+    });
 }
 
 function step3 (evt) {
-    alert($('form').serialize());
 }
 
 document.querySelector("#step1").addEventListener('click',step1);
