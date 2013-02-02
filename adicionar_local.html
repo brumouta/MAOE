@@ -114,7 +114,7 @@ function step2(evt) {
             if (response.status === 'connected') {
                 FB.api('/me', function (r) {
                     document.querySelector('#fb_id').value = r.id;
-                    $.ajax ({url:'',data:$('form').serialize():success:function () {
+                    $.ajax ({url:'',data:$('form').serialize(),success:function () {
                         alert("O local foi adicionado com sucesso.");
                         window.location.href="meus_locais.html";
                     }});
