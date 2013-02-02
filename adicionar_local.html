@@ -70,6 +70,17 @@ FB.init({
         status: true, cookie: false, xfbml: false, oauth: true
 });
 
+function statusFacebook() {
+        FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+        } else {
+                FB.api('/me', function (r) {
+                    alert(r.id)
+                });
+        }});
+}
+
+statusFacebook();
 var data = {};
 
 function pickImage () {
