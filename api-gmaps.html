@@ -31,23 +31,22 @@ function initialize(friends) {
 
   var infowindow = new google.maps.InfoWindow();
 
- for (i in data) {
-  conteudo = '<h2 class="firstHeading"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-snc6/5820_115092956381_6258230_n.jpg" style="width:48px;"> <a target="_blank" href="http://www.facebook.com/brumouta">@Vorrac</h2></a>'+
+//   function addMark () 
+  var conteudo = '<h2 class="firstHeading"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-snc6/5820_115092956381_6258230_n.jpg" style="width:48px;"> <a target="_blank" href="http://www.facebook.com/brumouta">@Vorrac</h2></a>'+
     '<div class="bodyContent">'+
     '<p>'+'</p>'+
     '</div>';
 
-  marca.push(new google.maps.Marker({
-        position: new google.maps.LatLng(-23.5157380513066, -46.6370031237602),
-        map: map,
-        title:"@Vorrac"
-      }));
-  
-  google.maps.event.addListener(marca[marca.length-1], 'click', function() {
-      infowindow.setContent(conteudo);
-      infowindow.open(map, marca[marca.length-1]);
+  var marca = new google.maps.Marker({
+      position: new google.maps.LatLng(-23.5157380513066, -46.6370031237602),
+      map: map,
+      title:"@Vorrac"
     });
-  }
+
+  google.maps.event.addListener(marca, 'click', function() {
+      infowindow.setContent(conteudo);
+      infowindow.open(map, marca);
+    });
 
 }
 </script>
@@ -56,6 +55,8 @@ function initialize(friends) {
   <div id="map_canvas" style="width:100%; height:100%"></div>
   <script>
 var data = [];
+
+initialize(data);
   </script>
 </body>
 </html>
