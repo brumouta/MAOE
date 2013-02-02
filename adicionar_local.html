@@ -60,10 +60,16 @@
 </div>
 </form>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 document.querySelector('.icon-back').onclick = function () { window.history.back() }
 </script>
 <script>
+FB.init({
+        appId  : '594023257280586',
+        status: true, cookie: false, xfbml: false, oauth: true
+});
+
 var data = {};
 
 function pickImage () {
