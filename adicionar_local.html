@@ -48,7 +48,7 @@
     	<button id="step2">Já estou no lugar certo</button>
         <input type="hidden" name="lat">
         <input type="hidden" name="lng">
-        <input type="hidden" name="fb_id">
+        <input type="hidden" name="fb_id" id="fb_id">
     </div>
 
     <div id="passo-3" style="display:none;">
@@ -105,23 +105,23 @@ function step2(evt) {
         $('input[name=lat]').val(position.coords.latitude);
         $('input[name=lng]').val(position.coords.longitude);
         $('#passo-2').hide();
-        alert($('form').serialize());
+        FB.init({
+                appId  : '594023257280586',
+                status: true, cookie: false, xfbml: false, oauth: true
+        });
+
+        FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+                FB.api('/me', function (r) {
+                    document.querySelector('#fb_id').value = r.id;
+                    $.ajax (url:'',data:$('form').serialize())
+                });
+        }});
         //$('#passo-3').show();
     });
 }
 
 function step3 (evt) {
-    FB.init({
-            appId  : '594023257280586',
-            status: true, cookie: false, xfbml: false, oauth: true
-    });
-
-    FB.getLoginStatus(function(response) {
-    if (response.status === 'connected') {
-            FB.api('/me', function (r) {
-                alert(r.id)
-            });
-    }});
 }
 
 document.querySelector("#step1").addEventListener('click',step1);
