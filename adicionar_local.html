@@ -65,32 +65,17 @@
 document.querySelector('.icon-back').onclick = function () { window.history.back() }
 </script>
 <script>
-FB.init({
-        appId  : '594023257280586',
-        status: true, cookie: false, xfbml: false, oauth: true
-});
-
-function statusFacebook() {
-        FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-                FB.api('/me', function (r) {
-                    alert(r.id)
-                });
-        }});
-}
-
-statusFacebook();
 var data = {};
 
 function pickImage () {
-	var pickImage = document.querySelector("#image-presenter");
+    var pickImage = document.querySelector("#image-presenter");
     if (pickImage) { 
         pickImage.onclick = function () {
              var pick = new MozActivity({
                  name: "pick",
                  data: {
                      type: ["image/png", "image/jpg", "image/jpeg"]
-				}
+                }
              });
 
             pick.onsuccess = function () {
@@ -105,8 +90,8 @@ function pickImage () {
 }
 
 function step1(evt) {
-	$('#passo-1').hide();
-	$('#passo-2').show();
+    $('#passo-1').hide();
+    $('#passo-2').show();
     $('h2').hide();
     $('h2.p2').show();
 
@@ -116,7 +101,7 @@ function step1(evt) {
 }
 
 function step2(evt) {
-	navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function(position) {
         $('input[name=lat]').val(position.coords.latitude);
         $('input[name=lng]').val(position.coords.longitude);
         $('#passo-2').hide();
@@ -126,6 +111,17 @@ function step2(evt) {
 }
 
 function step3 (evt) {
+    FB.init({
+            appId  : '594023257280586',
+            status: true, cookie: false, xfbml: false, oauth: true
+    });
+
+    FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+            FB.api('/me', function (r) {
+                alert(r.id)
+            });
+    }});
 }
 
 document.querySelector("#step1").addEventListener('click',step1);
