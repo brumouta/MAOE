@@ -109,22 +109,7 @@ function step2(evt) {
 }
 
 function step3 (evt) {
-     var pick = new MozActivity({
-         name: "pick",
-         data:{
-         	type:["image/png", "image/jpg", "image/jpeg"]
-         }
-     });
-
-    pick.onsuccess = function () {
-        var img = document.createElement("img");
-        img.src = window.URL.createObjectURL(this.result.blob);
-        document.querySelector("#image-presenter").appendChild(img);
-    };
-
-    pick.onerror = function () {
-        //console.log("An error occurred");
-    };
+    alert($('form').serialize());
 }
 
 document.querySelector("#step1").addEventListener('click',step1);
