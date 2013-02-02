@@ -111,12 +111,13 @@ function step2(evt) {
         });
 
         FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
+            if (response.status === 'connected') {
                 FB.api('/me', function (r) {
                     document.querySelector('#fb_id').value = r.id;
-                    $.ajax (url:'',data:$('form').serialize())
+                    $.ajax ({url:'',data:$('form').serialize()});
                 });
-        }});
+            }
+        });
         //$('#passo-3').show();
     });
 }
