@@ -42,14 +42,11 @@ function initialize() {
       map: map,
       title:"@Vorrac"
     });
-  }
 
   google.maps.event.addListener(marca, 'click', function() {
       infowindow.setContent(conteudo);
       infowindow.open(map, marca);
     });
-
-
 
 }
 </script>
