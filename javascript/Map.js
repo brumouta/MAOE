@@ -46,7 +46,8 @@ function Map (canvas, mapa_url, lat, lng) {
             campuseiro.lng,
             campuseiro.image,
             campuseiro.url,
-            campuseiro.name
+            campuseiro.name,
+            campuseiro.status
         );
 
         marks.push(mark);
@@ -59,17 +60,21 @@ function Map (canvas, mapa_url, lat, lng) {
      *              image - a imagem para a janela de informação
      *              url - perfil no facebook
      *              name - nome ou nick name do campuseiro
+     *              status - ultima mensagem de status do campuseiro no facebook
      */
-    function createMark (lat,lng,image,url,name) {
+    function createMark (lat,lng,image,url,name,status) {
         var infowindow = new google.maps.InfoWindow();
-        
+
         var conteudo = '<h2 class="firstHeading"><img src="' +
-            image + '" style="width:48px;"> <a target="_blank" href="' +
-            url + '">' +
-            name + '</h2></a>'+
-            '<div class="bodyContent">'+
-            '<p>'+'</p>'+
-            '</div>';
+                       image + '" style="width:64px;"> <a target="_blank" href="' +
+                       url + '">' +
+                       name + '</h2></a>';
+
+        if (status_message) {
+            conteudo += '<div class="bodyContent">' +
+                        '<p>' + status_message + '</p>' +
+                        '</div>';
+        }
       
         var marca = new google.maps.Marker({
             position: new google.maps.LatLng(lat, lng),
